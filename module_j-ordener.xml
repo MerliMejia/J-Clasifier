@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_j-ordener" default="compile.module.j-ordener">
+  <dirname property="module.j-ordener.basedir" file="${ant.file.module_j-ordener}"/>
+  
+  <property name="module.jdk.home.j-ordener" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.j-ordener" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.j-ordener" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.j-ordener" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="j-ordener.output.dir" value="${module.j-ordener.basedir}/../out/production/J-Ordener"/>
+  <property name="j-ordener.testoutput.dir" value="${module.j-ordener.basedir}/../out/test/J-Ordener"/>
+  
+  <path id="j-ordener.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="j-ordener.module.production.classpath">
+    <path refid="${module.jdk.classpath.j-ordener}"/>
+    <path refid="library.j-ordener.classpath"/>
+  </path>
+  
+  <path id="j-ordener.runtime.production.module.classpath">
+    <pathelement location="${j-ordener.output.dir}"/>
+    <path refid="library.j-ordener.classpath"/>
+  </path>
+  
+  <path id="j-ordener.module.classpath">
+    <path refid="${module.jdk.classpath.j-ordener}"/>
+    <pathelement location="${j-ordener.output.dir}"/>
+    <path refid="library.j-ordener.classpath"/>
+  </path>
+  
+  <path id="j-ordener.runtime.module.classpath">
+    <pathelement location="${j-ordener.testoutput.dir}"/>
+    <pathelement location="${j-ordener.output.dir}"/>
+    <path refid="library.j-ordener.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.j-ordener">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.j-ordener">
+    <patternset refid="excluded.from.module.j-ordener"/>
+  </patternset>
+  
+  <path id="j-ordener.module.sourcepath">
+    <dirset dir="${module.j-ordener.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.j-ordener" depends="compile.module.j-ordener.production,compile.module.j-ordener.tests" description="Compile module J-Ordener"/>
+  
+  <target name="compile.module.j-ordener.production" depends="register.custom.compilers" description="Compile module J-Ordener; production classes">
+    <mkdir dir="${j-ordener.output.dir}"/>
+    <javac2 destdir="${j-ordener.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.j-ordener}/javac">
+      <compilerarg line="${compiler.args.j-ordener}"/>
+      <bootclasspath refid="j-ordener.module.bootclasspath"/>
+      <classpath refid="j-ordener.module.production.classpath"/>
+      <src refid="j-ordener.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.j-ordener"/>
+    </javac2>
+    
+    <copy todir="${j-ordener.output.dir}">
+      <fileset dir="${module.j-ordener.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.j-ordener.tests" depends="register.custom.compilers,compile.module.j-ordener.production" description="compile module J-Ordener; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.j-ordener" description="cleanup module">
+    <delete dir="${j-ordener.output.dir}"/>
+    <delete dir="${j-ordener.testoutput.dir}"/>
+  </target>
+</project>

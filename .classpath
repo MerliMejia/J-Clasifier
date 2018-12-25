@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="sources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
+	<classpathentry kind="lib" path="D:/Dropbox/Proyectos Personales/JAVA/J-Ordener/poi-3.9.jar"/>
+	<classpathentry kind="lib" path="D:/Dropbox/Proyectos Personales/JAVA/FX/J-Clasifier/controlsfx-8.40.14.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

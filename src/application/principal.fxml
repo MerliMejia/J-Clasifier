@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.controladorPrincipal">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="20.0" prefWidth="500.0" style="-fx-background-color: #000a12;" />
+            <Pane layoutY="20.0" prefHeight="126.0" prefWidth="500.0" style="-fx-background-color: #263238;">
+               <children>
+                  <Label layoutX="163.0" layoutY="24.0" text="J-Clasifier" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="39.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="193.0" layoutY="70.0" text="by Merli Mejia" textFill="#4f5b62">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label id="importar" fx:id="importarClick" layoutX="148.0" layoutY="212.0" onMouseClicked="#clickImportar" style="-fx-padding: 20;" stylesheets="@application.css" text="Importar..." textFill="#cdcdcd">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

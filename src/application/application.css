@@ -1,0 +1,15 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+#importar
+{
+	-fx-border-style: dotted;
+	-fx-border-radius: 100%;
+	-fx-border-color: #cdcdcd;
+	-fx-cursor: hand;
+}
+
+#importar:hover
+{
+	-fx-border-color: #263238;
+	-fx-text-fill: #263238;
+}

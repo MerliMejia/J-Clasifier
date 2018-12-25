@@ -6,7 +6,9 @@ That's why i made this simple software that takes a .xls file and return you a o
 
 So now, instead of expending 30 mins ordening the .xls file I just do couple of clicks and it's done.
 
-I also use this proyect for practising JavaFX.
+I also used this project for practising JavaFX.
 
 ## Gallery
 
+![Screen](/Gallery/1.png)
+![Screen](/Gallery/2.png)
